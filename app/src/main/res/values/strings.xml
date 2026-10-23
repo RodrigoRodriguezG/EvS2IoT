@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Piscicultura IoT</string>
+    <string name="title_login">Monitoreo de Piscicultura</string>
+    <string name="subtitle_login">Salmonicultura IoT/OT</string>
+    <string name="label_username">Usuario</string>
+    <string name="label_email">Correo electrónico</string>
+    <string name="label_password">Contraseña</string>
+    <string name="btn_login">Ingresar</string>
+    <string name="btn_register">Crear cuenta</string>
+    <string name="title_role_select">Seleccionar Rol del Dispositivo</string>
+    <string name="role_nodo_title">Nodo Sensor (Simulador ESP32)</string>
+    <string name="role_nodo_desc">Monitorea variables, procesa control de aireador y alimentador automático, y transmite vía Bluetooth RFCOMM.</string>
+    <string name="role_estacion_title">Estación de Monitoreo</string>
+    <string name="role_estacion_desc">Recibe telemetría en tiempo real, visualiza dashboard y envía comandos de control.</string>
+    <string name="title_nodo">Nodo Sensor - Piscicultura</string>
+    <string name="title_estacion">Estación Central - Piscicultura</string>
+    <string name="lbl_temp">Temperatura del Agua</string>
+    <string name="lbl_turbidez">Turbidez</string>
+    <string name="lbl_aireador">Estado del Aireador</string>
+    <string name="lbl_alimentador">Estado del Alimentador</string>
+    <string name="btn_connect_bt">Conectar Dispositivo Bluetooth</string>
+    <string name="btn_force_feed">Forzar Alimentación</string>
+    <string name="btn_toggle_aerator">Modo Manual Aireador</string>
+    <string name="btn_logout">Cerrar Sesión</string>
+</resources>

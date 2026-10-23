@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Conectividad a Internet para Firebase Authentication -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <!-- Permisos Bluetooth para Android 12+ (API 31+) -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="s" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADVERTISE"
+        tools:targetApi="s" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_CONNECT"
+        tools:targetApi="s" />
+
+    <!-- Permisos Bluetooth legacy para Android <= 11 (API <= 30) -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:maxSdkVersion="30" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:maxSdkVersion="30" />
+
+    <!-- Característica de hardware Bluetooth obligatoria -->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
+
+    <application
+        android:name="cl.inacap.piscicultura.PisciculturaApp"
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Piscicultura">
+
+        <!-- Actividad Principal / Login (Launcher) -->
+        <activity
+            android:name="cl.inacap.piscicultura.ui.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Registro de usuarios -->
+        <activity
+            android:name="cl.inacap.piscicultura.ui.RegisterActivity"
+            android:exported="false"
+            android:parentActivityName="cl.inacap.piscicultura.ui.LoginActivity" />
+
+        <!-- Selector de Rol (Nodo o Estación) -->
+        <activity
+            android:name="cl.inacap.piscicultura.ui.RoleSelectActivity"
+            android:exported="false" />
+
+        <!-- Rol Nodo Sensor (Simulador ESP32) -->
+        <activity
+            android:name="cl.inacap.piscicultura.ui.NodoActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize" />
+
+        <!-- Rol Estación de Monitoreo / Control Central -->
+        <activity
+            android:name="cl.inacap.piscicultura.ui.EstacionActivity"
+            android:exported="false"
+            android:configChanges="orientation|screenSize" />
+
+    </application>
+
+</manifest>
