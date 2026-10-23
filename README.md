@@ -19,7 +19,6 @@ Para validar la lógica operativa sin requerir inicialmente la integración fís
 | **Sensor DHT22 / DS18B20** | **Slider de Temperatura** (0 a 40 °C) | Mide la temperatura del agua en el estanque. Rango óptimo del salmón: 18 °C a 26 °C. |
 | **Potenciómetro / Sensor Analógico** | **Slider de Turbidez** (0 a 100 %) | Simula la concentración de sólidos suspendidos y calidad del agua. Límite admisible: $\le 60\%$. |
 | **Actuador LED / Relé de Oxigenación** | **Indicador de Aireador** | Actuador de oxigenación/bombeo para compensar estrés térmico o turbidez elevada. |
-| **Servomotor SG90** | **Actuador Alimentador** | Simula la dosificación mecánica de alimento según temporización controlada. |
 | **Consola / SCADA de Planta** | **Estación de Monitoreo** | Panel central en tiempo real para visualizar parámetros, alertas y comandar actuadores. |
 
 ### Lógica de Control Operativa Implementada (`PiscicultureLogic`)
