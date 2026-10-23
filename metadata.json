@@ -1,5 +1,5 @@
 {
-  "name": "Piscicultura IoT",
+  "name": "Salmonitoreo",
   "description": "Sistema IoT/OT de monitoreo y control para piscicultura de salmón con nodo sensor y estación de control vía Bluetooth.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

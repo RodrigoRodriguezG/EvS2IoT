@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "Piscicultura IoT"
+rootProject.name = "Salmonitoreo"
 
 include(":app")

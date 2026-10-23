@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:text="🐟 Piscicultura Central"
+                android:text="🐟 Salmonitoreo Central"
                 android:textColor="@color/color_text_primary"
                 android:textSize="18sp"
                 android:textStyle="bold" />
