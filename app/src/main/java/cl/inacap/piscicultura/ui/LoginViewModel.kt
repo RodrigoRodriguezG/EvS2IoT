@@ -32,6 +32,17 @@ class LoginViewModel(
         return userRepository.isSessionValid()
     }
 
+    fun seedDefaultUser() {
+        viewModelScope.launch {
+            userRepository.seedDefaultUserIfNeeded()
+        }
+    }
+
+    fun enterAsGuest() {
+        userRepository.setGuestSession("operador_demo")
+        _loginState.value = LoginState.Success("operador_demo")
+    }
+
     fun getActiveUsername(): String? {
         return userRepository.getActiveUsername()
     }

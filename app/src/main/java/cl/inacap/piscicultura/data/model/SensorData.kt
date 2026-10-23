@@ -15,18 +15,6 @@ data class SensorData(
     @SerializedName("modoManualAireador")
     val modoManualAireador: Boolean = false,
 
-    @SerializedName("alimentadorActivo")
-    val alimentadorActivo: Boolean = false,
-
-    @SerializedName("segundosRestantesAlimentacion")
-    val segundosRestantesAlimentacion: Int = 15,
-
-    @SerializedName("alimentadorPospuesto")
-    val alimentadorPospuesto: Boolean = false,
-
-    @SerializedName("totalAlimentaciones")
-    val totalAlimentaciones: Int = 0,
-
     @SerializedName("timestamp")
     val timestamp: Long = System.currentTimeMillis()
 )

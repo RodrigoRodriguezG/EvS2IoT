@@ -144,11 +144,31 @@
                     app:cornerRadius="12dp" />
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnQuickGuest"
+                    style="@style/Widget.Material3.Button.TonalButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:text="⚡ Acceso Rápido (Modo Demo / Evaluación)"
+                    android:textColor="@color/color_primary"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFillDemo"
+                    style="@style/Widget.Material3.Button.TextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="4dp"
+                    android:text="🔑 Llenar credenciales: operador / Inacap2024*"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="12sp" />
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/btnGoRegister"
                     style="@style/Widget.Material3.Button.TextButton"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="4dp"
                     android:text="¿No tienes cuenta? Crear cuenta"
                     android:textColor="@color/color_accent" />
 
@@ -163,7 +183,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="16dp"
             android:gravity="center"
-            android:text="🔒 Protección FLAG_SECURE activa. Cero contraseñas en texto plano: PBKDF2-HMAC-SHA256 (120k iteraciones, salt 16B) en Dispatchers.IO. Bloqueo 30s tras 5 intentos fallidos. Sesión segura 24h en AES-256 GCM."
+            android:text="🔒 Cero contraseñas en texto plano: PBKDF2-HMAC-SHA256 (120k iteraciones, salt 16B) en Dispatchers.IO. Bloqueo 30s tras 5 intentos fallidos. Sesión segura 24h en AES-256 GCM."
             android:textColor="@color/color_text_secondary"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"

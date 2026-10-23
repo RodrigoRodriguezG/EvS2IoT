@@ -10,7 +10,6 @@ data class CommandMessage(
     val payload: String = ""
 ) {
     companion object {
-        const val ACTION_FORCE_FEED = "FORCE_FEED"
         const val ACTION_TOGGLE_AERATOR = "TOGGLE_AERATOR_MANUAL"
     }
 }

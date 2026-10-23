@@ -37,20 +37,147 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvRoleSelectTitle"
-            tools:text="operador@inacap.cl" />
+            tools:text="Sesión activa: operador1" />
+
+        <!-- Tarjeta de Advertencia: Permisos Necesarios -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPermissionWarning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
+            app:strokeColor="@color/color_active"
+            app:strokeWidth="1.5dp"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvPermissionWarningTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚠️ Permisos Bluetooth Necesarios"
+                    android:textColor="@color/color_active"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvPermissionWarningMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Se requieren permisos de Bluetooth para comunicar el Nodo Sensor (ESP32) con la Estación. La app no se cerrará, pero necesitas concederlos para continuar."
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRetryPermissions"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/color_accent"
+                        android:text="Reintentar"
+                        android:textColor="@color/color_on_primary"
+                        android:textStyle="bold"
+                        app:cornerRadius="8dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnOpenSettings"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="44dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:text="Abrir Ajustes"
+                        android:textColor="@color/color_accent"
+                        app:cornerRadius="8dp"
+                        app:strokeColor="@color/color_accent" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Tarjeta de Advertencia: Bluetooth Apagado -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardBluetoothDisabled"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/color_surface"
+            app:cardCornerRadius="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardPermissionWarning"
+            app:strokeColor="@color/color_warning"
+            app:strokeWidth="1.5dp"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvBluetoothDisabledTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📡 Bluetooth Desactivado"
+                    android:textColor="@color/color_warning"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvBluetoothDisabledMessage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="El adaptador Bluetooth se encuentra apagado. Es indispensable activarlo para establecer el canal de radio RFCOMM."
+                    android:textColor="@color/color_text_primary"
+                    android:textSize="13sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEnableBluetooth"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:layout_marginTop="12dp"
+                    android:backgroundTint="@color/color_warning"
+                    android:text="Activar Bluetooth"
+                    android:textColor="@color/color_background"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Tarjeta ROL: NODO SENSOR -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cardNodo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             app:cardBackgroundColor="@color/color_surface"
             app:cardCornerRadius="16dp"
             app:cardElevation="3dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
+            app:layout_constraintTop_toBottomOf="@id/cardBluetoothDisabled"
             app:strokeColor="@color/color_outline"
             app:strokeWidth="1dp">
 
@@ -72,7 +199,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="• Simula sensores de temperatura (0-40 °C) y turbidez (0-100 %)\n• Control automático de aireador y alimentador (ciclo 15s con reintento)\n• Servidor Bluetooth RFCOMM que transmite telemetría cada 2s"
+                    android:text="• Simula sensores de temperatura (0-40 °C) y turbidez (0-100 %)\n• Control automático del aireador por umbrales OT\n• Servidor Bluetooth RFCOMM que transmite telemetría cada 2s"
                     android:textColor="@color/color_text_secondary"
                     android:textSize="13sp" />
 
@@ -123,7 +250,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="• Cliente Bluetooth RFCOMM que recibe datos en vivo\n• Dashboard de temperatura, turbidez, aireador y alimentador\n• Envío de comandos: forzar alimentación y modo manual de aireador"
+                    android:text="• Cliente Bluetooth RFCOMM que recibe datos en vivo\n• Dashboard de temperatura, turbidez y aireador\n• Envío de comandos: modo de aireador (AUTO/ON/OFF)"
                     android:textColor="@color/color_text_secondary"
                     android:textSize="13sp" />
 

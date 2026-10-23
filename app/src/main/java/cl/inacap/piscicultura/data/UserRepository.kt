@@ -67,6 +67,22 @@ class UserRepository(
         return@withContext RegisterResult.Success(username)
     }
 
+    suspend fun seedDefaultUserIfNeeded() = withContext(Dispatchers.IO) {
+        if (!isUserRegistered("operador")) {
+            val hashResult = PasswordHasher.hashPassword("Inacap2024*")
+            val keyUser = getUserKeyPrefix("operador")
+            secureStore.putString("${keyUser}_salt", hashResult.saltBase64)
+            secureStore.putString("${keyUser}_hash", hashResult.hashBase64)
+            addRegisteredUser("operador")
+        }
+    }
+
+    fun setGuestSession(guestName: String = "operador_demo") {
+        secureStore.putString(KEY_ACTIVE_USERNAME, guestName)
+        secureStore.putString(KEY_SESSION_TOKEN, UUID.randomUUID().toString())
+        secureStore.putLong(KEY_SESSION_TIMESTAMP, System.currentTimeMillis())
+    }
+
     suspend fun loginUser(
         usernameInput: String,
         passwordChars: CharSequence

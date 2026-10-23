@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Piscicultura IoT Firestore Schema",
+  "description": "Esquema Firestore para telemetría y control de piscicultura",
+  "collections": [
+    {
+      "path": "users/{userId}",
+      "description": "Perfil de operador",
+      "fields": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "subcollections": [
+        {
+          "path": "telemetry/{telemetryId}",
+          "description": "Registros históricos de sensores de agua",
+          "fields": {
+            "temperatura": { "type": "number" },
+            "turbidez": { "type": "number" },
+            "aireadorEncendido": { "type": "boolean" },
+            "modoManualAireador": { "type": "boolean" },
+            "alimentadorActivo": { "type": "boolean" },
+            "timestamp": { "type": "timestamp" }
+          }
+        },
+        {
+          "path": "commands/{commandId}",
+          "description": "Comandos remotos emitidos",
+          "fields": {
+            "action": { "type": "string" },
+            "payload": { "type": "string" },
+            "timestamp": { "type": "timestamp" }
+          }
+        }
+      ]
+    }
+  ]
+}

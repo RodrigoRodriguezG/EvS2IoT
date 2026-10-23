@@ -1,0 +1,8 @@
+{
+  "firestore": [
+    {
+      "database": "ai-studio-android-piscicul-bd2e01c7-3fb4-4937-9473-18b47afc8e72",
+      "rules": "firestore.rules"
+    }
+  ]
+}

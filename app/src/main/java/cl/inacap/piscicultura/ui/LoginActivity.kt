@@ -3,7 +3,6 @@ package cl.inacap.piscicultura.ui
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -32,15 +31,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Bloqueo de captura de pantalla y previsualización en recientes por seguridad
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_SECURE,
-            WindowManager.LayoutParams.FLAG_SECURE
-        )
-
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Inicializar usuario demo en almacenamiento local seguro
+        viewModel.seedDefaultUser()
 
         // Verificación de sesión persistente activa (expiración de 24 horas)
         if (viewModel.isSessionActive()) {
@@ -77,6 +73,18 @@ class LoginActivity : AppCompatActivity() {
             // Hashing y validación se ejecutan en Dispatchers.IO en el repositorio
             // Cero credenciales expuestas en logs
             viewModel.login(username, password ?: "")
+        }
+
+        // Acceso rápido directo para pruebas / evaluación del sistema
+        binding.btnQuickGuest.setOnClickListener {
+            viewModel.enterAsGuest()
+        }
+
+        // Llenado automático con credenciales de prueba preconfiguradas
+        binding.btnFillDemo.setOnClickListener {
+            binding.etUsername.setText("operador")
+            binding.etPassword.setText("Inacap2024*")
+            Toast.makeText(this, "Credenciales demo cargadas", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnGoRegister.setOnClickListener {
