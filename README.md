@@ -161,29 +161,29 @@ El perfil Bluetooth SPP requiere que los teléfonos se reconozcan como dispositi
 <table align="center">
   <tr>
     <td align="center" width="33%">
-      <img src="screenshots/01_login_activity.png" alt="Pantalla de login" width="250"><br>
+      <img src="screenshots/login.jpg" alt="Pantalla de login" width="250"><br>
       <b>1. Autenticación</b><br>
       <sub>Inicio de sesión con Firebase y acceso rápido de credenciales demo.</sub>
     </td>
     <td align="center" width="33%">
-      <img src="screenshots/02_permission_request.png" alt="Solicitud de permisos Bluetooth" width="250"><br>
+      <img src="screenshots/permisos.jpg" alt="Solicitud de permisos Bluetooth" width="250"><br>
       <b>2. Permisos</b><br>
       <sub>Solicitud en tiempo de ejecución de los permisos Bluetooth.</sub>
     </td>
     <td align="center" width="33%">
-      <img src="screenshots/03_role_select.png" alt="Selección de rol" width="250"><br>
+      <img src="screenshots/principal.jpg" alt="Selección de rol" width="250"><br>
       <b>3. Selección de rol</b><br>
       <sub>Elección entre Nodo Sensor y Estación de Monitoreo.</sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="33%">
-      <img src="screenshots/04_nodo_sensor_running.png" alt="Nodo Sensor en ejecución" width="250"><br>
+      <img src="screenshots/sensor.jpg" alt="Nodo Sensor en ejecución" width="250"><br>
       <b>4. Nodo Sensor</b><br>
       <sub>Sliders de temperatura y turbidez, y estado del aireador.</sub>
     </td>
     <td align="center" width="33%">
-      <img src="screenshots/05_estacion_dashboard.png" alt="Dashboard de la Estación" width="250"><br>
+      <img src="screenshots/monitoreo.jpg" alt="Dashboard de la Estación" width="250"><br>
       <b>5. Estación de Monitoreo</b><br>
       <sub>Métricas en tiempo real y control remoto de actuadores.</sub>
     </td>
